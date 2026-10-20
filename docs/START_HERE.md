@@ -48,6 +48,8 @@ Chronoamperometry collects its buffered step first and sends the data afterwards
 
 ## Plot controls
 
+See the **[Dashboard guide](DASHBOARDS.md)** for screenshots, shared buttons and the settings/plots for each technique.
+
 **Overview** gives a broad view including zero; **Detail** uses close automatic scaling. **Plot settings** offers fixed limits, line/point styles and display averaging. Keep averaging at 1 when assessing transient shape. The native toolbar supports zoom and pan, and limits persist during redraws. **Runs** hides individual runs; **Clear plot** hides all; **Show all** restores them. Those controls do not delete raw data. Saved CSVs retain all recorded samples.
 
 ## If connection fails
