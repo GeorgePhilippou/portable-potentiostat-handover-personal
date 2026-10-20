@@ -2,6 +2,15 @@
 
 Firmware, Python dashboard and setup guides for the MSP430FR5994/AD5941 development board, using the TI MSP-FET for programming and UART communication.
 
+## System setup
+
+<p align="center">
+  <img src="docs/images/development-board-annotated.png" width="600" alt="MSP-FET debugger, portable potentiostat board and series RC test circuit">
+</p>
+<p align="center"><em>MSP-FET, development board and breadboard RC test load.</em></p>
+
+The photo shows a bench test load. Use the [numbered connection tables](docs/HARDWARE.md) for the selected experiment and sensor.
+
 ## Get started
 
 1. [Download the firmware ZIP for your technique](downloads/README.md) and the **[Python dashboard ZIP](https://github.com/GeorgePhilippou/portable-potentiostat-handover-personal/raw/refs/heads/main/downloads/Python_Dashboard.zip)**, then extract both.
@@ -28,15 +37,6 @@ The **[Start here guide](docs/START_HERE.md)** covers the complete setup, connec
 **CV and LSV use one firmware project.** CV sweeps to a vertex potential and back; LSV performs a one-way sweep from start to end. Choose the required mode in the Python launcher; switching between these modes does not require reflashing.
 
 One Python dashboard download supports all of these experiments. Use firmware and dashboard ZIPs from the same [downloads page](downloads/README.md). See the [tested settings and current limits](docs/VALIDATION.md), including the unfinished EIS range.
-
-## System setup
-
-<p align="center">
-  <img src="docs/images/development-board-annotated.png" width="600" alt="MSP-FET debugger, portable potentiostat board and series RC test circuit">
-</p>
-<p align="center"><em>MSP-FET, development board and breadboard RC test load.</em></p>
-
-The photo shows a bench test load. Use the [numbered connection tables](docs/HARDWARE.md) for the selected experiment and sensor.
 
 ## Configure for your experiment
 
