@@ -1,6 +1,6 @@
 # Bench validation and limits
 
-These results were recorded on 12–13 October 2026 on the Version 2 board. Publication on 18 October did not repeat hardware testing. Nominal loads are not traceable calibration standards.
+These results were recorded on 12–13 October 2026 on the Version 2 board. Nominal loads are not traceable calibration standards.
 
 | Technique / build | Recorded check | Result | Practical limit |
 |---|---|---|---|
@@ -11,7 +11,7 @@ These results were recorded on 12–13 October 2026 on the Version 2 board. Publ
 | EIS R1, historical | 100 Hz–20 kHz, nominal 6.8 kΩ | 48 points; magnitude 6709.45–6732.83 Ω, phase −0.3799° to +0.0360° | Earlier R1 build only; no physical capacitor phase check |
 | EIS R2, included source | Extension target 0.1 Hz–200 kHz | First high-frequency attempt timed out; latest timing change untested | Experimental; not demo-ready |
 
-The supplied EIS project is **R2**, not a reconstructed copy of validated R1. The R1 data are retained as evidence, not as validation of R2. Finish EIS before presenting the full repository as covering all techniques.
+The supplied EIS project is **R2**, not a reconstructed copy of validated R1. The R1 data are retained as evidence, not as validation of R2. The requested 0.1 Hz–200 kHz range is not ready for routine measurements.
 
 ## Evidence
 
