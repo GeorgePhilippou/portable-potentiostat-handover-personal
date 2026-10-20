@@ -4,7 +4,7 @@ This is an editable baseline. First follow the normal workflow below; then use t
 
 ## 1. Download and install
 
-Open the [Downloads page](../downloads/README.md). Download the firmware ZIP for your technique and the separate shared Python dashboard ZIP, then extract both to a normal local folder. You do not need the Releases page. This personal copy is public: no account or invitation is required to download it.
+Open the [Downloads page](../downloads/README.md). Download the firmware ZIP for your technique and the separate shared Python dashboard ZIP, then extract both to a normal local folder.
 
 You need the Version 2 board, TI MSP-FET with the prepared programming/UART/power cable, and the chosen sensor or dummy load.
 
@@ -26,7 +26,7 @@ The [hardware document index](hardware/README.md) provides the schematic and PCB
 
 ## 3. Flash the experiment
 
-Select the required handover project in CCS, build it, and use the usual **Flash** action. Hardware choices such as ADC input and gain are edited in that project's `main.c` and require rebuilding/reflashing. CV and LSV share one firmware; select the mode in the Python launcher. **EIS is still in development; see its [status page](EIS_DEVELOPMENT.md) before use.**
+Select the required handover project in CCS, build it, and use the usual **Flash** action. Hardware choices such as ADC input and gain are edited in that project's `main.c` and require rebuilding/reflashing. The cyclic-voltammetry firmware also supports LSV: choose CV for a forward-and-return scan or LSV for a one-way scan in the Python launcher. Switching modes does not require reflashing. **EIS is still in development; see its [status page](EIS_DEVELOPMENT.md) before use.**
 
 ## 4. Open the dashboard
 

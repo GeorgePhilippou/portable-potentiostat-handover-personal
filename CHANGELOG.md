@@ -1,5 +1,9 @@
 # Changes
 
+## 20 October 2026
+
+Put setup instructions first, group CV and LSV under their shared firmware, and simplify the repository introduction and navigation. Firmware and dashboard behaviour unchanged.
+
 ## 19 October 2026
 
 - Provide separate firmware ZIPs and one shared Python dashboard ZIP, with matching download identifiers and source checksums.

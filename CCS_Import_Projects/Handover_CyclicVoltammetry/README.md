@@ -1,4 +1,6 @@
-# Handover_CyclicVoltammetry
+# Cyclic voltammetry — CV and LSV modes
+
+One firmware supports both modes. Select CV for a forward-and-return scan or LSV for a one-way scan in the Python launcher. Changing between them does not require reflashing.
 
 **[Download this firmware ZIP](https://github.com/GeorgePhilippou/portable-potentiostat-handover-personal/raw/refs/heads/main/downloads/firmware/Handover_CyclicVoltammetry.zip)** · **[Download Python dashboard ZIP](https://github.com/GeorgePhilippou/portable-potentiostat-handover-personal/raw/refs/heads/main/downloads/Python_Dashboard.zip)**
 

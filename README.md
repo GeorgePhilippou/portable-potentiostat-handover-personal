@@ -1,44 +1,51 @@
-# Portable potentiostat — personal handover copy
+# Portable potentiostat
 
-This public copy is maintained by George Philippou to provide immediate access to the handover files. It is based on lab source commit `3eaae751ed7d65a48dd6f0718712464d4a3d1911` (20 October 2026). The [lab repository](https://github.com/Non-Invasive-Bioelectronics-Lab/portable-potentiostat-handover) remains the main version; access to it currently requires a lab invitation. This separate copy does not synchronise automatically.
-
-An editable firmware and Python dashboard baseline for the MSP430FR5994/AD5941 development board, with TI MSP-FET programming and UART.
-
-Developed by **George Philippou** · [Non-Invasive Bioelectronics Lab](https://github.com/Non-Invasive-Bioelectronics-Lab)
-
-**[Download firmware and dashboard →](downloads/README.md)** · [Start here](docs/START_HERE.md) · [Connections and board drawings](docs/HARDWARE.md) · [Customisation](docs/CUSTOMISATION.md) · [Dashboard previews](docs/DASHBOARDS.md)
-
-## System setup
-
-<p align="center">
-  <img src="docs/images/development-board-annotated.png" width="600" alt="MSP-FET Debugger, Portable Potentiostat and Series RC test circuit, labelled with purple arrows">
-</p>
-<p align="center"><em>MSP-FET, development board and RC test load.</em></p>
-
-## Supported techniques
-
-| Technique | Firmware download | Status |
-|---|---|---|
-| Open-circuit potential (OCP) | [Handover_OCP ZIP](https://github.com/GeorgePhilippou/portable-potentiostat-handover-personal/raw/refs/heads/main/downloads/firmware/Handover_OCP.zip) | Bench tested |
-| Chronoamperometry | [Handover_Chronoamperometric ZIP](https://github.com/GeorgePhilippou/portable-potentiostat-handover-personal/raw/refs/heads/main/downloads/firmware/Handover_Chronoamperometric.zip) | Bench tested |
-| Amperometry | [Handover_Amperometric ZIP](https://github.com/GeorgePhilippou/portable-potentiostat-handover-personal/raw/refs/heads/main/downloads/firmware/Handover_Amperometric.zip) | Bench tested |
-| Cyclic voltammetry (CV) | [Handover_CyclicVoltammetry ZIP](https://github.com/GeorgePhilippou/portable-potentiostat-handover-personal/raw/refs/heads/main/downloads/firmware/Handover_CyclicVoltammetry.zip) | Bench tested |
-| Linear sweep voltammetry (LSV) | [Same CV / LSV ZIP](https://github.com/GeorgePhilippou/portable-potentiostat-handover-personal/raw/refs/heads/main/downloads/firmware/Handover_CyclicVoltammetry.zip) | Bench tested |
-| Electrochemical impedance spectroscopy (EIS) | [Handover_EIS ZIP](https://github.com/GeorgePhilippou/portable-potentiostat-handover-personal/raw/refs/heads/main/downloads/firmware/Handover_EIS.zip) | In development |
-
-Bench tests used internal references and resistor/RC loads. EIS is still being completed; [test results and current limits](docs/VALIDATION.md) are documented separately.
+Firmware, Python dashboard and setup guides for the MSP430FR5994/AD5941 development board, using the TI MSP-FET for programming and UART communication.
 
 ## Get started
 
 1. [Download the firmware ZIP for your technique](downloads/README.md) and the **[Python dashboard ZIP](https://github.com/GeorgePhilippou/portable-potentiostat-handover-personal/raw/refs/heads/main/downloads/Python_Dashboard.zip)**, then extract both.
-2. In Code Composer Studio, build and flash the firmware project for the technique you want to use.
-3. In the extracted **Python_Dashboard** folder, install the Python dependencies using `python -m pip install -r requirements.txt`.
-4. Run **`potentiostat_dashboard.py` inside that Python_Dashboard folder**. It detects the firmware and opens the matching dashboard. Choose CV or LSV when using their shared firmware.
+2. Follow the [connection guide](docs/HARDWARE.md). In Code Composer Studio, import, build and flash the selected firmware project.
+3. In the extracted **Python_Dashboard** folder, install the dependencies:
+   ```sh
+   python -m pip install -r requirements.txt
+   ```
+4. Run **`potentiostat_dashboard.py`** from that folder, select the serial port if needed, and press **Detect and open**. The launcher identifies the firmware and opens its dashboard. For the cyclic-voltammetry firmware, choose **CV** or **LSV** mode.
+5. Set the experiment parameters, press **Start**, then use **Save session** to save the raw measurements and plot.
 
-The [setup guide](docs/START_HERE.md) covers installation, connection and saving data. Download both ZIPs from the same downloads page. This personal copy is public; no invitation is needed to view or download it. [About this copy](docs/REPOSITORY.md).
+The **[Start here guide](docs/START_HERE.md)** covers the complete setup, connection troubleshooting and plot controls. **[Dashboard previews](docs/DASHBOARDS.md)** show each experiment's interface.
 
-## Adapt it to your experiment
+## Experiments and firmware
 
-Both firmware and dashboard are supplied as editable source. The [customisation guide](docs/CUSTOMISATION.md) shows where to change ADC inputs, gain, acquisition, controls, plotting and data export, and which changes require rebuilding/reflashing.
+| Experiment | Firmware download | Status |
+|---|---|---|
+| Open-circuit potential (OCP) | [OCP ZIP](https://github.com/GeorgePhilippou/portable-potentiostat-handover-personal/raw/refs/heads/main/downloads/firmware/Handover_OCP.zip) | Bench tested with internal references |
+| Chronoamperometry | [Chronoamperometry ZIP](https://github.com/GeorgePhilippou/portable-potentiostat-handover-personal/raw/refs/heads/main/downloads/firmware/Handover_Chronoamperometric.zip) | Bench tested with a series RC load |
+| Amperometry | [Amperometry ZIP](https://github.com/GeorgePhilippou/portable-potentiostat-handover-personal/raw/refs/heads/main/downloads/firmware/Handover_Amperometric.zip) | Bench tested with a resistor |
+| Cyclic voltammetry (CV), with linear sweep (LSV) mode | [CV / LSV ZIP](https://github.com/GeorgePhilippou/portable-potentiostat-handover-personal/raw/refs/heads/main/downloads/firmware/Handover_CyclicVoltammetry.zip) | Both modes bench tested with a resistor |
+| Electrochemical impedance spectroscopy (EIS) | [EIS ZIP](https://github.com/GeorgePhilippou/portable-potentiostat-handover-personal/raw/refs/heads/main/downloads/firmware/Handover_EIS.zip) | In development |
+
+**CV and LSV use one firmware project.** CV sweeps to a vertex potential and back; LSV performs a one-way sweep from start to end. Choose the required mode in the Python launcher; switching between these modes does not require reflashing.
+
+One Python dashboard download supports all of these experiments. Use firmware and dashboard ZIPs from the same [downloads page](downloads/README.md). See the [tested settings and current limits](docs/VALIDATION.md), including the unfinished EIS range.
+
+## System setup
+
+<p align="center">
+  <img src="docs/images/development-board-annotated.png" width="600" alt="MSP-FET debugger, portable potentiostat board and series RC test circuit">
+</p>
+<p align="center"><em>MSP-FET, development board and breadboard RC test load.</em></p>
+
+The photo shows a bench test load. Use the [numbered connection tables](docs/HARDWARE.md) for the selected experiment and sensor.
+
+## Configure for your experiment
+
+Both firmware and dashboard are editable source. The [customisation guide](docs/CUSTOMISATION.md) identifies where to change ADC inputs, gain, acquisition settings, dashboard controls, plotting and data export. It also explains which changes require rebuilding and reflashing the board.
 
 [Schematic, PCB layout and ADI application note](docs/hardware/README.md) · [Measured examples](examples/) · [Validation details](docs/VALIDATION.md)
+
+## Author and acknowledgements
+
+Developed by **George Philippou**, University of Manchester · [Non-Invasive Bioelectronics Lab](https://github.com/Non-Invasive-Bioelectronics-Lab).
+
+The firmware includes Analog Devices and Texas Instruments components; see [third-party notices](THIRD_PARTY_NOTICES.md).
