@@ -2,7 +2,9 @@
 
 Firmware, Python dashboard and setup guides for the MSP430FR5994/AD5941 development board, using the TI MSP-FET for programming and UART communication.
 
-## System setup
+## Hardware and software
+
+### Development board and debugger
 
 <p align="center">
   <img src="docs/images/development-board-annotated.png" width="600" alt="MSP-FET debugger, portable potentiostat board and series RC test circuit">
@@ -10,6 +12,15 @@ Firmware, Python dashboard and setup guides for the MSP430FR5994/AD5941 developm
 <p align="center"><em>MSP-FET, development board and breadboard RC test load.</em></p>
 
 The photo shows a bench test load. Use the [numbered connection tables](docs/HARDWARE.md) for the selected experiment and sensor.
+
+### Python dashboard
+
+<p align="center">
+  <a href="docs/DASHBOARDS.md"><img src="docs/images/CA_dashboard.png" width="800" alt="Chronoamperometry dashboard showing a recorded current transient, experiment settings and plotting controls"></a>
+</p>
+<p align="center"><em>Chronoamperometry example using saved bench measurements. One Python launcher opens the dashboard for the flashed firmware.</em></p>
+
+**[See all dashboards and learn the controls](docs/DASHBOARDS.md)** — screenshots, experiment settings, plotting, comparison and saving.
 
 ## Get started
 
