@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+**/Debug/
+**/Release/
+**/.launches/
+**/.settings/
+*.out
+*.obj
+*.map
+*.log
+recordings/

@@ -1,0 +1,19 @@
+{
+  "build": "HANDOVER_2026_10_12_CA_BUFFERED_R3",
+  "samples": 149,
+  "warnings": [],
+  "state": "IDLE",
+  "commanded_step_mV": 100,
+  "reported_resistance_ohm": 6800,
+  "reported_capacitance_uF": 10,
+  "nominal_RC_tau_ms": 68,
+  "fit_tau_ms": 69.93650463088014,
+  "fit_first_300ms_tau_ms": 68.90050269359652,
+  "fit_difference_percent": 2.8478009277649097,
+  "fit_amplitude_uA": 13.041173341405184,
+  "fit_offset_uA": 0.009961306709320892,
+  "fit_rmse_uA": 0.03424388278841676,
+  "fit_r_squared": 0.9997925053471368,
+  "source": "chrono_uart_232430.jsonl",
+  "note": "Unaveraged captured current. Time grid uses nominal AD5941 clock; component values are user-reported, not independently measured."
+}

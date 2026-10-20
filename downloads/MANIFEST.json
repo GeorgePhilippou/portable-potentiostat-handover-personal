@@ -1,0 +1,47 @@
+{
+  "download_set": "503627896231aef9",
+  "description": "Firmware source and Python dashboard from one matched source set",
+  "packages": [
+    {
+      "path": "firmware/Handover_OCP.zip",
+      "kind": "firmware",
+      "project": "Handover_OCP",
+      "sha256": "98148feb0e2430aa50a5bf3d573983238054a84906f9cb810854f36e94324e64",
+      "bytes": 106580
+    },
+    {
+      "path": "firmware/Handover_Chronoamperometric.zip",
+      "kind": "firmware",
+      "project": "Handover_Chronoamperometric",
+      "sha256": "2d9ff0faa74d4ac2a3415ad02d2a701269041a0e5bbe4457301e5b0a21221ef9",
+      "bytes": 114083
+    },
+    {
+      "path": "firmware/Handover_Amperometric.zip",
+      "kind": "firmware",
+      "project": "Handover_Amperometric",
+      "sha256": "d7e293e975eba7a399c64a1054da1fe515faebf4bb709182096619a1aba8e3b8",
+      "bytes": 115720
+    },
+    {
+      "path": "firmware/Handover_CyclicVoltammetry.zip",
+      "kind": "firmware",
+      "project": "Handover_CyclicVoltammetry",
+      "sha256": "e97ada68d033537e1eff2365028967246a5742697422c3a117089526c5221f7d",
+      "bytes": 123279
+    },
+    {
+      "path": "firmware/Handover_EIS.zip",
+      "kind": "firmware",
+      "project": "Handover_EIS",
+      "sha256": "f90c9b020e8d0d49505bf1bed0656ce900c6e2718410f1b01d406d625d93224c",
+      "bytes": 116071
+    },
+    {
+      "path": "Python_Dashboard.zip",
+      "kind": "python-dashboard",
+      "sha256": "8b3517cbc07bcdd4561e824627f6d38342b24b68b8ccab0afa360772109899b4",
+      "bytes": 22557
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+source,potential_V,current_uA,note
+lab_potentiostat,-0.2,-2.175,raw export first point
+lab_potentiostat,0.8,7.75,raw export last point
+device_stage2_original_sign,-0.2,1.6339,UART first point before current correction
+device_stage2_original_sign,0.8,-8.5779,UART last point before current correction
+device_stage3_verified,-0.2,-1.6003,UART first point after current correction
+device_stage3_verified,0.79,8.2738,UART final sampled point after current correction

@@ -1,0 +1,123 @@
+{
+  "build": "HANDOVER_2026_10_13_CV_LSV_R3",
+  "resistor_nominal_ohm": 6800,
+  "raw_uart": "cv_lsv_uart_153828.jsonl",
+  "final_state": "IDLE",
+  "warnings": [],
+  "techniques": {
+    "LSV": {
+      "sampling_frequency_hz": 10.0,
+      "rtia_calibrated_ohm": 10749.0693,
+      "all_samples_fit": {
+        "samples": 80,
+        "slope_uA_per_V": 149.06097795497192,
+        "intercept_uA": 0.004508860225142405,
+        "inferred_resistance_ohm": 6708.66388856028,
+        "slope_error_percent": 1.3614650093809022,
+        "r_squared": 0.9999780273227095,
+        "max_residual_uA": 0.47532304878048137
+      },
+      "sweeps": [
+        {
+          "sweep": 1,
+          "full_fit": {
+            "samples": 40,
+            "slope_uA_per_V": 149.08435741088186,
+            "intercept_uA": 0.004085712945593549,
+            "inferred_resistance_ohm": 6707.611833775182,
+            "slope_error_percent": 1.3773630393996594,
+            "r_squared": 0.9999804443438445,
+            "max_residual_uA": 0.42185780487803726
+          }
+        },
+        {
+          "sweep": 2,
+          "full_fit": {
+            "samples": 40,
+            "slope_uA_per_V": 149.03759849906197,
+            "intercept_uA": 0.004932007504695019,
+            "inferred_resistance_ohm": 6709.716273416026,
+            "slope_error_percent": 1.345566979362145,
+            "r_squared": 0.9999756586449038,
+            "max_residual_uA": 0.4801882926829215
+          }
+        }
+      ]
+    },
+    "CV": {
+      "sampling_frequency_hz": 10.0,
+      "rtia_calibrated_ohm": 10751.9883,
+      "all_samples_fit": {
+        "samples": 160,
+        "slope_uA_per_V": 148.90483473782768,
+        "intercept_uA": 0.019533750000000412,
+        "inferred_resistance_ohm": 6715.698665934322,
+        "slope_error_percent": 1.2552876217228226,
+        "r_squared": 0.9999867633541635,
+        "max_residual_uA": 0.49491514981274065
+      },
+      "sweeps": [
+        {
+          "sweep": 1,
+          "full_fit": {
+            "samples": 80,
+            "slope_uA_per_V": 148.9140505617978,
+            "intercept_uA": 0.019356249999999426,
+            "inferred_resistance_ohm": 6715.283052387392,
+            "slope_error_percent": 1.2615543820225117,
+            "r_squared": 0.9999875543492303,
+            "max_residual_uA": 0.4512866432584133
+          },
+          "forward_fit": {
+            "samples": 40,
+            "slope_uA_per_V": 149.00869418386503,
+            "intercept_uA": 0.00165652908067955,
+            "inferred_resistance_ohm": 6711.017806558847,
+            "slope_error_percent": 1.3259120450282103,
+            "r_squared": 0.9999803520953198,
+            "max_residual_uA": 0.4156046341463231
+          },
+          "reverse_fit": {
+            "samples": 40,
+            "slope_uA_per_V": 148.83233489681055,
+            "intercept_uA": 0.03617417448404978,
+            "inferred_resistance_ohm": 6718.97004567809,
+            "slope_error_percent": 1.2059877298311816,
+            "r_squared": 0.9999974457843257,
+            "max_residual_uA": 0.07602936210132327
+          }
+        },
+        {
+          "sweep": 2,
+          "full_fit": {
+            "samples": 80,
+            "slope_uA_per_V": 148.89561891385773,
+            "intercept_uA": 0.019711249999999535,
+            "inferred_resistance_ohm": 6716.114330929651,
+            "slope_error_percent": 1.2490208614232445,
+            "r_squared": 0.9999859800391518,
+            "max_residual_uA": 0.4968436563670302
+          },
+          "forward_fit": {
+            "samples": 40,
+            "slope_uA_per_V": 148.99447654784248,
+            "intercept_uA": 0.006512617260790601,
+            "inferred_resistance_ohm": 6711.658198140638,
+            "slope_error_percent": 1.3162440525328778,
+            "r_squared": 0.9999769847466915,
+            "max_residual_uA": 0.4648620731707176
+          },
+          "reverse_fit": {
+            "samples": 40,
+            "slope_uA_per_V": 148.80629549718583,
+            "intercept_uA": 0.03196897748592478,
+            "inferred_resistance_ohm": 6720.1457885826585,
+            "slope_error_percent": 1.1882809380863613,
+            "r_squared": 0.999996843064517,
+            "max_residual_uA": 0.07128739212008384
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "build": "HANDOVER_2026_10_13_AMP_RESTART_R4",
+  "resistor_nominal_ohm": 6800,
+  "raw_uart": "amp_uart_151335.jsonl",
+  "steady_interval_s": [
+    7,
+    10
+  ],
+  "final_state": "IDLE",
+  "warnings": [],
+  "runs": [
+    {
+      "run": 1,
+      "potential_mV": 100.0,
+      "samples": 100,
+      "mean_current_uA": 14.877593333333328,
+      "std_current_uA": 0.0015292399133703632,
+      "expected_current_uA": 14.705882352941178,
+      "error_percent": 1.1676346666666282,
+      "rtia_calibrated_ohm": 10749.4053
+    },
+    {
+      "run": 2,
+      "potential_mV": 200.0,
+      "samples": 100,
+      "mean_current_uA": 29.838883333333342,
+      "std_current_uA": 0.001764024265477528,
+      "expected_current_uA": 29.411764705882355,
+      "error_percent": 1.4522033333333573,
+      "rtia_calibrated_ohm": 10749.4053
+    },
+    {
+      "run": 3,
+      "potential_mV": 0.0,
+      "samples": 100,
+      "mean_current_uA": 0.0016333333333333336,
+      "std_current_uA": 0.0017759569219172372,
+      "expected_current_uA": 0.0,
+      "error_percent": null,
+      "rtia_calibrated_ohm": 10749.4053
+    }
+  ],
+  "doubling_ratio": 2.0056256858748225
+}

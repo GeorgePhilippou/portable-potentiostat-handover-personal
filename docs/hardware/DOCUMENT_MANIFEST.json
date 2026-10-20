@@ -1,0 +1,24 @@
+{
+  "added_on": "2026-10-18",
+  "description": "User-supplied PDF files copied unchanged; PNG previews rendered from page 1",
+  "documents": [
+    {
+      "repository_path": "docs/hardware/Schematic.pdf",
+      "original_filename": "Schematic.pdf",
+      "sha256": "7111e6465b8c0f5256465706463f170fc0282ef9ff0d83733e8bd14095a7874e",
+      "bytes": 226224
+    },
+    {
+      "repository_path": "docs/hardware/PCB_Layout.pdf",
+      "original_filename": "PCB_Layout.pdf",
+      "sha256": "50cac950ff1cf1595d34faffd1a0df5240b7909f3571df21b9beec71800d9c60",
+      "bytes": 265029
+    },
+    {
+      "repository_path": "docs/references/AnalogDevices_2019_AN_1563_Rev_0.pdf",
+      "original_filename": "AnalogDevices_2019_AN_1563_Rev_0.pdf",
+      "sha256": "cae7681bb7fed8e21d49464bb119fa73e63de3c2ee0a77f49f1f18446bbc8f9f",
+      "bytes": 573219
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+# Code Composer Studio build products
+Debug/
+Release/
+
+# macOS and editor noise
+.DS_Store
+*.pyc
+__pycache__/
+
+# Dashboard runtime output
+*.log
+amp_dashboard_raw_*.csv
+
