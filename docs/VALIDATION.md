@@ -17,6 +17,10 @@ The supplied EIS project is **R2**, not a reconstructed copy of validated R1. Th
 
 Measured CSVs, summary JSON and comparison plots are under [examples](../examples/). EIS raw JSONL logs retain exact transmitted/received bytes: `eis_uart_161852.jsonl` and `eis_uart_162046.jsonl` are the successful historical checks; `eis_uart_163811.jsonl` and `eis_uart_163902.jsonl` are incomplete/failed diagnostics. Do not combine them as successful runs.
 
+## Noise in the supplied chrono example
+
+The saved 149-sample chrono recording contains a near-50 Hz component in its settled tail, approximately 0.083 µA peak-to-peak after accounting for the RC decay. Its timestamp grid is approximately 150 samples/s. This is consistent with mains-related interference, but does not identify a physical source: charger state was not recorded, and higher-frequency components can alias into this band. The raw recording is retained unchanged. A paired battery-versus-charger test is needed before attributing the ripple to the laptop supply; see [noise guidance](HARDWARE.md#reducing-mains-pickup).
+
 ## Software checks
 
 The root dashboard/protocol suite can be run from `CCS_Import_Projects` with `python -m unittest discover -p 'test_*.py'`. Some tests compile extracted C functions and require a host C compiler. They exercise conversion, wire protocols and plotting; they do not replace a CCS firmware build or hardware acquisition test.

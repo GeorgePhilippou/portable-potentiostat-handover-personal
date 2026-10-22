@@ -52,6 +52,10 @@ See the **[Dashboard guide](DASHBOARDS.md)** for screenshots, shared buttons and
 
 **Overview** gives a broad view including zero; **Detail** uses close automatic scaling. **Plot settings** offers fixed limits, line/point styles and display averaging. Keep averaging at 1 when assessing transient shape. The native toolbar supports zoom and pan, and limits persist during redraws. **Runs** hides individual runs; **Clear plot** hides all; **Show all** restores them. Those controls do not delete raw data. Saved CSVs retain all recorded samples.
 
+## If the trace has periodic ripple
+
+See [Reducing mains pickup](HARDWARE.md#reducing-mains-pickup). Compare the same dummy-load recording with the laptop charger connected and disconnected; keep the raw samples and record the setup.
+
 ## If connection fails
 
 1. Close other serial readers; only one application should own the UART.

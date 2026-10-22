@@ -50,4 +50,19 @@ The Version 2 board has no Version 5 TMUX electrode switch. P2.3 writes do not r
 
 The female header plus labelled jumper leads terminating in crocodile clips is suitable for the bench handover. Secure the harness and label WE, RE, CE and ground; avoid relying on loose, unlabelled leads.
 
+## Reducing mains pickup
+
+Periodic ripple near 50 Hz (or 60 Hz in some regions) can enter through lead pickup, power supplies or shared ground paths. A laptop charger is one possible contributor; its connection alone does not establish the cause. Do not assume that the debugger provides galvanic isolation.
+
+For a low-noise bench check:
+
+1. Run the laptop on its internal battery with the charger disconnected. Disconnect other unnecessary mains-connected accessories, such as powered docks or external displays, that could retain a ground path.
+2. Keep the sensor/load leads short and away from mains cables and power adapters. Keep the board-to-debugger ground connection intact.
+3. Repeat the same dummy-load measurement with and without the charger, keeping wiring and acquisition settings unchanged. Save raw data and record the power/accessory configuration.
+4. If ripple persists, investigate lead routing, shielding, reference/power noise and the board's analogue configuration. Battery operation can reduce some coupling paths, but does not guarantee noise-free measurements or certified galvanic isolation.
+
+Never disconnect protective earth from mains-powered equipment to reduce noise. Display smoothing is not a remedy for interference in the acquired data.
+
+Background: [Analog Devices — ground loops and USB isolation](https://www.analog.com/en/resources/technical-articles/breaking-ground-loops-with-functional-isolation.html).
+
 Reference: [TI MSP Debuggers User's Guide](https://www.ti.com/lit/ug/slau647o/slau647o.pdf). Schematic and PCB layout PDF exports are included in the document index. Editable native KiCad project files and PCB fabrication files are not included.
