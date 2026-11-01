@@ -33,7 +33,7 @@ The photo shows a bench test load. Use the [numbered connection tables](docs/HAR
 4. Run **`potentiostat_dashboard.py`** from that folder, select the serial port if needed, and press **Detect and open**. The launcher identifies the firmware and opens its dashboard. For the cyclic-voltammetry firmware, choose **CV** or **LSV** mode.
 5. Set the experiment parameters, press **Start**, then use **Save session** to save the raw measurements and plot.
 
-The **[Start here guide](docs/START_HERE.md)** covers the complete setup, connection troubleshooting and plot controls. **[Dashboard guide: screenshots and controls for each experiment](docs/DASHBOARDS.md)** explains the interface, settings, plotting and saving.
+The **[Start here guide](docs/START_HERE.md)** covers the complete setup, connection troubleshooting and plot controls. **[Windows drivers and CCS setup](docs/WINDOWS_SETUP.md)** covers MSP-FET detection and project import. **[Dashboard guide: screenshots and controls for each experiment](docs/DASHBOARDS.md)** explains the interface, settings, plotting and saving.
 
 ## Experiments and firmware
 

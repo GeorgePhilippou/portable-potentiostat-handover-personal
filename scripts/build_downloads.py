@@ -45,6 +45,7 @@ This ZIP is the complete CCS firmware source project, not a pre-flashed binary.
 
 Hardware configuration is in main.c. Toolchain used: TI MSP430 compiler 21.6.1.LTS. CV and LSV share Handover_CyclicVoltammetry; choose the mode in Python.
 
+Windows drivers and project import: {REPO}/blob/main/docs/WINDOWS_SETUP.md
 Connections: {REPO}/blob/main/docs/HARDWARE.md
 Customisation: {REPO}/blob/main/docs/CUSTOMISATION.md
 
@@ -71,6 +72,7 @@ The matching firmware ZIP must be built/flashed in Code Composer Studio first. K
 
 Matched download set: {bundle}. PACKAGE.json identifies the set and exact source hashes. No firmware code is contained in this dashboard ZIP.
 Setup and wiring: {REPO}/blob/main/docs/START_HERE.md
+Windows drivers and CCS: {REPO}/blob/main/docs/WINDOWS_SETUP.md
 Customisation: {REPO}/blob/main/docs/CUSTOMISATION.md
 EIS remains in development.
 '''

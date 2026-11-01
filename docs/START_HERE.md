@@ -8,7 +8,9 @@ Open the [Downloads page](../downloads/README.md). Download the firmware ZIP for
 
 You need the Version 2 board, TI MSP-FET with the prepared programming/UART/power cable, and the chosen sensor or dummy load.
 
-The firmware was built using **classic Code Composer Studio 12.5**, TI MSP430 compiler **21.6.1.LTS**, and MSP430FR5994. Use the existing CCS workspace: **Project → Import CCS Projects**, select the extracted `Handover_*` firmware folder and import that project. If you cloned/downloaded the entire repository instead, select its `CCS_Import_Projects` folder. No change to your existing workspace is needed. The newer CCS Theia workflow is not covered by these checks.
+**On Windows, first follow [MSP-FET drivers and CCS setup](WINDOWS_SETUP.md)** to check the USB driver, Device Manager interfaces and project import.
+
+The firmware was built using **classic Code Composer Studio 12.5**, TI MSP430 compiler **21.6.1.LTS**, and MSP430FR5994. Use the existing CCS workspace: **Project → Import CCS Projects**, select the extracted `Handover_*` firmware folder and import that project. If you cloned/downloaded the entire repository instead, select its `CCS_Import_Projects` folder. No change to your existing workspace is needed. Newer Theia-based CCS can import existing CCS projects; its menus differ. The Windows guide links to TI’s import procedure; this handover’s own build/workflow checks used classic CCS.
 
 The dashboard was exercised with Python 3.11. Open a terminal in the extracted **Python_Dashboard** folder and install its dependencies in the environment that runs Spyder/Python:
 
