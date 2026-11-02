@@ -41,8 +41,8 @@ This ZIP is the complete CCS firmware source project, not a pre-flashed binary.
 Before starting: install CCS with MSP430 support and Python if needed. Installation guide: {REPO}/blob/main/docs/INSTALL_SOFTWARE.md
 
 1. Extract the ZIP to a local folder.
-2. In classic Code Composer Studio 12.5, use Project → Import CCS Projects and select this {project} folder.
-3. Select the project, Build, then use your usual Flash action with the TI MSP-FET and MSP430FR5994 board.
+2. Open CCS. In classic CCS use Project → Import CCS Projects; in newer CCS use File → Import Project(s). Select the extracted {project} folder and finish importing it.
+3. Select the project and Build. When the build succeeds, use the CCS programming/debug action to load it through the MSP-FET. If debugging pauses at main, press Resume/Continue to run the firmware.
 4. On the computer, extract the separate Python_Dashboard.zip and run its potentiostat_dashboard.py. Install its requirements.txt first.
 
 Hardware configuration is in main.c. Toolchain used: TI MSP430 compiler 21.6.1.LTS. CV and LSV share Handover_CyclicVoltammetry; choose the mode in Python.
@@ -64,10 +64,10 @@ Matched download set: {bundle}. Download firmware and Python from the same downl
 This is the shared dashboard for OCP, chronoamperometry, amperometry, CV/LSV and experimental EIS. It is editable Python source.
 
 1. Python must already be installed (tested with 3.11); Spyder is optional. If needed, follow the installation guide: {REPO}/blob/main/docs/INSTALL_SOFTWARE.md
-2. Extract this ZIP and open a terminal in the extracted Python_Dashboard folder.
-3. Install dependencies with: python -m pip install -r requirements.txt
-4. Run: python potentiostat_dashboard.py
-   Alternatively open that file in Spyder using the same Python environment.
+2. Extract this ZIP. Open a command window in the extracted Python_Dashboard folder. The installation guide above shows how. If you used its Miniforge setup, enter: conda activate potentiostat
+3. In that same window, install the libraries (first use): python -m pip install -r requirements.txt
+4. In the same window, run: python potentiostat_dashboard.py
+   You should see the connection window. Spyder is optional; the terminal method does not need it.
 5. Close other serial readers, then Detect and open. The launcher identifies the flashed firmware; CV and LSV share a firmware image and you choose their mode in the launcher.
 
 The matching firmware ZIP must be built/flashed in Code Composer Studio first. Keep ec_dashboard.py and dashboard_assets alongside the launcher; do not move the launcher by itself.

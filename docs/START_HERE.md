@@ -1,73 +1,93 @@
 # Start here
 
-This is an editable baseline. First follow the normal workflow below; then use the [customisation guide](CUSTOMISATION.md) to adapt firmware and dashboard for your sensor or experiment.
+Follow these steps in order to put the firmware onto the board and record data with the Python dashboard.
 
-## Before you begin
+**Before starting:** you need the board, MSP-FET debugger, prepared cables, and the chosen sensor or test load. CCS and Python should already be installed. If they are not, follow **[Install CCS and Python](INSTALL_SOFTWARE.md)** first.
 
-This procedure assumes CCS with MSP430 support and Python are installed. If not, use **[Install CCS and Python](INSTALL_SOFTWARE.md)** first. That page also explains creating a Python environment, installing the libraries and checking the dashboard opens.
+## 1. Download and extract the files
 
-## 1. Download the handover files
+Open **[Downloads](../downloads/README.md)** and download:
 
-Open the [Downloads page](../downloads/README.md). Download the firmware ZIP for your technique and the separate shared Python dashboard ZIP, then extract both to a normal local folder.
+- **One firmware ZIP** for the experiment you want to run. This is the code for the board.
+- **The Python dashboard ZIP**. This is the software for your computer.
 
-You need the Version 2 board, TI MSP-FET with the prepared programming/UART/power cable, and the chosen sensor or dummy load.
+Extract both ZIPs. On Windows, right-click each ZIP and choose **Extract All**. On macOS, double-click each ZIP.
 
-**On Windows, first follow [MSP-FET drivers and CCS setup](WINDOWS_SETUP.md)** to check the USB driver, Device Manager interfaces and project import.
+**You should have two folders:** a `Handover_*` firmware folder, such as `Handover_OCP`, and a `Python_Dashboard` folder. Keep all files in their folders. Do not open `main.c` by itself and expect CCS to recognise the whole project.
 
-The firmware was built using **classic Code Composer Studio 12.5**, TI MSP430 compiler **21.6.1.LTS**, and MSP430FR5994. Use the existing CCS workspace: **Project → Import CCS Projects**, select the extracted `Handover_*` firmware folder and import that project. If you cloned/downloaded the entire repository instead, select its `CCS_Import_Projects` folder. No change to your existing workspace is needed. Newer Theia-based CCS can import existing CCS projects; its menus differ. The Windows guide links to TI’s import procedure; this handover’s own build/workflow checks used classic CCS.
+## 2. Connect the hardware
 
-The dashboard was exercised with Python 3.11. Open a terminal in the extracted **Python_Dashboard** folder and install its dependencies in the environment that runs Spyder/Python:
+1. With power disconnected, check the prepared cables against the **[connection guide](HARDWARE.md)**.
+2. Check the load/electrode connections for your experiment. OCP electrode mode uses a different WE pin from the current-measurement experiments.
+3. Connect the MSP-FET to the computer using a USB **data** cable.
 
-```sh
-python -m pip install -r requirements.txt
-```
+On Windows, check the debugger appears in Device Manager as described in **[Windows setup](WINDOWS_SETUP.md#1-check-windows-can-see-the-msp-fet)**. If it does not appear, fix that before trying to program the board.
 
-From a terminal on macOS, `python3` may be the command name. For Spyder, confirm its configured interpreter is the environment where these packages were installed. Spyder itself is optional and is not installed by this requirements file.
+## 3. Open the firmware in CCS
 
-## 2. Connect the board
+Open CCS and import the extracted **Handover_* folder**:
 
-With power disconnected, follow [the connection tables](HARDWARE.md). The OCP WE input uses a different pin from the current-measurement techniques. Use the prepared cable's pin numbers, not wire colour alone. Connect the MSP-FET to USB after the connections are checked.
+| CCS interface | Menu to use |
+|---|---|
+| Classic CCS, including 12.5 | **Project → Import CCS Projects** |
+| Newer Theia-based CCS | **File → Import Project(s)** |
 
-The [hardware document index](hardware/README.md) provides the schematic and PCB layout PDFs, plus the Analog Devices application note for background reading.
+Browse to the firmware folder, select the project from the discovered list, and finish the import. You should then see the project in CCS's project list. Do not import the Python folder as firmware.
 
-## 3. Flash the experiment
+The board's device is **MSP430FR5994**. The supplied projects use **TI MSP430 compiler 21.6.1.LTS**. See [Windows/CCS setup](WINDOWS_SETUP.md#2-import-the-complete-firmware-project) if CCS cannot find the project, compiler or debugger.
 
-Select the required handover project in CCS, build it, and use the usual **Flash** action. Hardware choices such as ADC input and gain are edited in that project's `main.c` and require rebuilding/reflashing. The cyclic-voltammetry firmware also supports LSV: choose CV for a forward-and-return scan or LSV for a one-way scan in the Python launcher. Switching modes does not require reflashing. **EIS is still in development; see its [status page](EIS_DEVELOPMENT.md) before use.**
+## 4. Build and program the board
 
-## 4. Open the dashboard
+1. Select the imported project in CCS and choose **Build**. Wait until it finishes without build errors.
+2. Use CCS's programming/debug action for that project. The **Debug** action (usually a bug icon; **Debug Project** in newer CCS) builds and loads the firmware onto the board.
+3. Wait for programming to finish. If an active debug session stops at `main` or a breakpoint, press **Resume/Continue** (the play control) so the firmware runs. If you use a separate **Flash** action that already starts the program, no extra Resume step is needed.
 
-Close other serial terminals and dashboards. In Spyder open **`potentiostat_dashboard.py` inside the extracted Python_Dashboard folder** and press Run, or from that folder run:
+**You should now have the selected firmware running on the board.** If you see **“No USB FET was found”**, follow [Windows troubleshooting](WINDOWS_SETUP.md); changing Python settings will not fix that error.
 
-```sh
-python potentiostat_dashboard.py
-```
+CV and LSV use the same firmware. Choose the scan mode later in the Python launcher. The supplied OCP firmware uses internal-reference inputs for a diagnostic; change `main.c` and rebuild/reflash before electrode OCP. **EIS remains [in development](EIS_DEVELOPMENT.md).**
 
-If using the entire repository rather than the separate dashboard ZIP, the launcher remains under `CCS_Import_Projects/`.
+## 5. Open the Python dashboard
 
-The launcher identifies the firmware using UART metadata. Automatic detection reads metadata; it does not start acquisition. Select CV or LSV if that firmware is detected. If necessary, select the Application UART port manually and press **Detect and open**. Use **Show connection details** if identification fails.
+1. Close other serial terminals and dashboards, including any CCS serial terminal.
+2. Open a command window in the extracted **Python_Dashboard** folder. See [how to open that folder in a command window](INSTALL_SOFTWARE.md#3-open-the-dashboard-folder).
+3. If you used the Miniforge installation instructions, run `conda activate potentiostat`.
+4. The first time you use this Python setup, install the libraries:
 
-## 5. Acquire and save
+   ```sh
+   python -m pip install -r requirements.txt
+   ```
 
-Set the experiment parameters and press **Start**. Use **Stop** to end a run early. **Save session** stores raw CSV and a PNG. Record sensor/load identity, electrode connections and the purpose of the run. [Measured examples](../examples/) show the bench checks.
+5. Run the launcher:
 
-Chronoamperometry collects its buffered step first and sends the data afterwards at 9600 baud. Allow several seconds of transfer for a one-second capture; lack of immediate plotting during acquisition is expected.
+   ```sh
+   python potentiostat_dashboard.py
+   ```
 
-## Plot controls
+On macOS, use `python3` instead if that is the command for your Python installation. Use the same Python setup for installing the libraries and running the launcher.
 
-See the **[Dashboard guide](DASHBOARDS.md)** for screenshots, shared buttons and the settings/plots for each technique.
+**You should see the connection window.** Select **Automatic** or the MSP-FET's **Application UART** port, then press **Detect and open**. For the shared cyclic-voltammetry firmware, choose **CV** or **LSV** mode.
 
-**Overview** gives a broad view including zero; **Detail** uses close automatic scaling. **Plot settings** offers fixed limits, line/point styles and display averaging. Keep averaging at 1 when assessing transient shape. The native toolbar supports zoom and pan, and limits persist during redraws. **Runs** hides individual runs; **Clear plot** hides all; **Show all** restores them. Those controls do not delete raw data. Saved CSVs retain all recorded samples.
+**You should now see the matching experiment dashboard.** If not, press **Show connection details** and keep the error text. [Connection troubleshooting](WINDOWS_SETUP.md#4-check-the-dashboard-separately) explains what to check next.
 
-## If the trace has periodic ripple
+## 6. Record and save
 
-See [Reducing mains pickup](HARDWARE.md#reducing-mains-pickup). Compare the same dummy-load recording with the laptop charger connected and disconnected; keep the raw samples and record the setup.
+1. Enter the experiment settings in the dashboard.
+2. Press **Start**. Use **Stop** if you want to end the run early.
+3. When the recording and transfer finish, press **Save session** and choose a new filename.
 
-## If connection fails
+This saves a **CSV containing the raw measurements** and a **PNG of the plot**. Save before closing the dashboard. Chronoamperometry sends its buffered samples after acquisition, so its plot is delayed; allow the transfer to finish.
 
-1. Close other serial readers; only one application should own the UART.
-2. Refresh ports. macOS names resemble `/dev/cu.usbmodem…`; Windows uses `COM…`. Names can change after reconnecting.
-3. Use the Application/backchannel UART, not the debugger interface.
-4. Check the selected firmware build completed and was flashed to the board. Use your normal Flash workflow; only an active paused debug session needs execution to be continued.
-5. Check the TX/RX connections against [the hardware table](HARDWARE.md), then inspect connection details. A port opening successfully alone does not prove the firmware is communicating.
+For screenshots and explanations of all buttons/settings, open the **[Dashboard guide](DASHBOARDS.md)**.
 
-[EIS development status](EIS_DEVELOPMENT.md) is separate from this normal operating path.
+## If something goes wrong
+
+| What happens | Where to look |
+|---|---|
+| CCS or Python is not installed | [Software installation](INSTALL_SOFTWARE.md) |
+| CCS reports “No USB FET”, or the project will not import/build | [Windows and CCS troubleshooting](WINDOWS_SETUP.md) |
+| Python reports a missing library/file | [Python library and folder setup](INSTALL_SOFTWARE.md#3-open-the-dashboard-folder) |
+| Dashboard opens but cannot connect | **Show connection details**, then [UART checks](WINDOWS_SETUP.md#4-check-the-dashboard-separately) |
+| Unsure what a dashboard control does | [Dashboard guide](DASHBOARDS.md) |
+| Periodic ripple in measurements | [Mains-pickup checks](HARDWARE.md#reducing-mains-pickup) |
+
+The [customisation guide](CUSTOMISATION.md) shows where to edit firmware and dashboard settings once the normal setup works.
