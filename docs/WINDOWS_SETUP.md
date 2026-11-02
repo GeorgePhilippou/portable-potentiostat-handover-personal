@@ -2,6 +2,8 @@
 
 Use this checklist for a new Windows computer or a **“No USB FET was found”** error. Work in this order: **USB detection → project import/build → programming/target connection → dashboard UART**. A USB-debugger detection failure occurs before the application firmware or sensor measurement can be assessed.
 
+If CCS or Python is not yet installed, start with **[Install CCS and Python](INSTALL_SOFTWARE.md)**, then return to the checks below.
+
 ## Software and drivers
 
 | Component | Purpose | Where to obtain it |

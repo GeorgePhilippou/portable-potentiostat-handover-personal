@@ -6,42 +6,42 @@
       "path": "firmware/Handover_OCP.zip",
       "kind": "firmware",
       "project": "Handover_OCP",
-      "sha256": "1d9aac721578bd600c58d282835185bfdbe74858cf567b0e46d972fc1898143d",
-      "bytes": 106612
+      "sha256": "572bcd6309eec174ff7856ab7de60ff4957ff15868fd8676d1dace423b6ce6d1",
+      "bytes": 106671
     },
     {
       "path": "firmware/Handover_Chronoamperometric.zip",
       "kind": "firmware",
       "project": "Handover_Chronoamperometric",
-      "sha256": "ccdf1dac0aa8a0bf58246534a6f2015eea7cf8d065a7b515091946ba2b62e7ee",
-      "bytes": 114115
+      "sha256": "35da64ff9eeaf69205bca7d2a0f83444a767f1761eb5d3b3b72e360cfb2b5a9e",
+      "bytes": 114177
     },
     {
       "path": "firmware/Handover_Amperometric.zip",
       "kind": "firmware",
       "project": "Handover_Amperometric",
-      "sha256": "fe6b1543fec395a9f949a0feb5116b15dc38eed66e7a696badd235690adbca60",
-      "bytes": 115751
+      "sha256": "09be821252e7ecfcba894ab62cd9edbab0f76c5dd8ad685b3ed1039b021c8b98",
+      "bytes": 115814
     },
     {
       "path": "firmware/Handover_CyclicVoltammetry.zip",
       "kind": "firmware",
       "project": "Handover_CyclicVoltammetry",
-      "sha256": "1c5a767bea282340ef1e4f9d515200c26a7bb670e752bf3793407a0dbe53c1ee",
-      "bytes": 123312
+      "sha256": "031eee8bbb687dfb1731f0cb96b2c4c9929690d8383f5252152ece482d8ceaf4",
+      "bytes": 123374
     },
     {
       "path": "firmware/Handover_EIS.zip",
       "kind": "firmware",
       "project": "Handover_EIS",
-      "sha256": "21c1ec98e7318c93245d05fab95252eb88186a66d91398b4dbe130b5299c9dcc",
-      "bytes": 116103
+      "sha256": "16cd77b7c60af3392ecaecd667249a8b4ef2d1fb22304b6a6c56b8572d166952",
+      "bytes": 116164
     },
     {
       "path": "Python_Dashboard.zip",
       "kind": "python-dashboard",
-      "sha256": "71c163ecb5f20ba92e2dcc2b3e83a82657c4f2a48bf02206fd36f7e24fef53a0",
-      "bytes": 22589
+      "sha256": "e2f2301f582f8c06abb5d6d9be86478d3420abdcce5a9562a82b5435914bc7b7",
+      "bytes": 22641
     }
   ]
 }

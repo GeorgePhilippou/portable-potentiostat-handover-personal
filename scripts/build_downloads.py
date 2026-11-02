@@ -38,6 +38,8 @@ def build():
 
 This ZIP is the complete CCS firmware source project, not a pre-flashed binary.
 
+Before starting: install CCS with MSP430 support and Python if needed. Installation guide: {REPO}/blob/main/docs/INSTALL_SOFTWARE.md
+
 1. Extract the ZIP to a local folder.
 2. In classic Code Composer Studio 12.5, use Project → Import CCS Projects and select this {project} folder.
 3. Select the project, Build, then use your usual Flash action with the TI MSP-FET and MSP430FR5994 board.
@@ -61,7 +63,7 @@ Matched download set: {bundle}. Download firmware and Python from the same downl
 
 This is the shared dashboard for OCP, chronoamperometry, amperometry, CV/LSV and experimental EIS. It is editable Python source.
 
-1. Install Python (tested with 3.11); Spyder is optional.
+1. Python must already be installed (tested with 3.11); Spyder is optional. If needed, follow the installation guide: {REPO}/blob/main/docs/INSTALL_SOFTWARE.md
 2. Extract this ZIP and open a terminal in the extracted Python_Dashboard folder.
 3. Install dependencies with: python -m pip install -r requirements.txt
 4. Run: python potentiostat_dashboard.py

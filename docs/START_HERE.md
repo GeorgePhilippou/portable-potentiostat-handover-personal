@@ -2,7 +2,11 @@
 
 This is an editable baseline. First follow the normal workflow below; then use the [customisation guide](CUSTOMISATION.md) to adapt firmware and dashboard for your sensor or experiment.
 
-## 1. Download and install
+## Before you begin
+
+This procedure assumes CCS with MSP430 support and Python are installed. If not, use **[Install CCS and Python](INSTALL_SOFTWARE.md)** first. That page also explains creating a Python environment, installing the libraries and checking the dashboard opens.
+
+## 1. Download the handover files
 
 Open the [Downloads page](../downloads/README.md). Download the firmware ZIP for your technique and the separate shared Python dashboard ZIP, then extract both to a normal local folder.
 

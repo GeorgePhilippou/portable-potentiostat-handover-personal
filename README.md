@@ -24,6 +24,8 @@ The photo shows a bench test load. Use the [numbered connection tables](docs/HAR
 
 ## Get started
 
+**Prerequisites:** Code Composer Studio with MSP430 support and Python are already installed. If either is missing, first follow **[Install CCS and Python](docs/INSTALL_SOFTWARE.md)**. Python 3.11 is the tested dashboard baseline.
+
 1. [Download the firmware ZIP for your technique](downloads/README.md) and the **[Python dashboard ZIP](https://github.com/GeorgePhilippou/portable-potentiostat-handover-personal/raw/refs/heads/main/downloads/Python_Dashboard.zip)**, then extract both.
 2. Follow the [connection guide](docs/HARDWARE.md). In Code Composer Studio, import, build and flash the selected firmware project.
 3. In the extracted **Python_Dashboard** folder, install the dependencies:

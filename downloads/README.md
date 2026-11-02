@@ -2,6 +2,8 @@
 
 Download **one firmware ZIP** for the board and **the Python dashboard ZIP** for the computer. Each link below downloads a ZIP directly.
 
+Need to install the software first? Follow **[Install CCS and Python](../docs/INSTALL_SOFTWARE.md)**.
+
 ## 1. Firmware for the MSP430
 
 | Technique | Download | Editable source |
